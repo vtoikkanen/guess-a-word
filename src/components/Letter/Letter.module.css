@@ -18,6 +18,14 @@
 }
 
 .new {
-    border: 1px solid #666;
+    border: 1px solid #EEE;
     background-color: #FFF;
+}
+
+@media screen and (max-width: 700px) {
+    .letter {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
 }

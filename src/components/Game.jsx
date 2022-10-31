@@ -16,10 +16,22 @@ const Game = () => {
         return words[Math.floor(Math.random() * words.length)];
     }
 
-    const resetGame = () => {
-        setWord(getRandomWord());
-        setGuess("");
-        setGuesses([]);
+    const handleLetterClick = (letter) => {
+        if (guess.length < 5) setGuess(guess + letter);
+    }
+
+    const handleBackspaceClick = () => {
+        if (guess.length > 0) setGuess(guess.substring(0, guess.length - 1));
+    }
+
+    const handleSubmit = () => {
+        if (guess.length === 5) {
+            setGuesses([...guesses, guess]);
+            setGuess("");
+            if (guess === word) {
+                setGameWon(true);
+            }
+        }
     }
 
     // Generate random word on load
@@ -54,18 +66,6 @@ const Game = () => {
                 <div className={styles.guide}>
                     Sininen: haettu sana sisältää kyseisen kirjaimen. Vihreä: kirjain on haetussa sanassa samassa kohdassa.
                 </div>
-                <div className={styles.letters}>
-                    <div className={styles.subtitle}>Arvatut kirjaimet</div>
-                    <div className={styles.lettersArea}>
-                        {
-                            letters_fi.map(letter => {
-                                const used = guesses.findIndex(guess => guess.toUpperCase().split("").includes(letter)) !== -1;
-                                const inWord = word.toUpperCase().split("").includes(letter);
-                                return <SmallLetter letter={letter} used={used} inWord={inWord} />
-                            })
-                        }
-                    </div>
-                </div>
                 <div className={styles.wordGrid}>
                     {
                         guesses.slice(-4).map(guessed_word => {
@@ -85,6 +85,21 @@ const Game = () => {
                             );
                         })
                     }
+                </div>
+                <div className={styles.letters}>
+                    <div className={styles.lettersArea}>
+                        {
+                            letters_fi.map(letter => {
+                                const used = guesses.findIndex(guess => guess.toUpperCase().split("").includes(letter)) !== -1;
+                                const inWord = word.toUpperCase().split("").includes(letter);
+                                return <SmallLetter press={() => handleLetterClick(letter)} letter={letter} used={used} inWord={inWord} />
+                            })
+                        }
+                    </div>
+                    <div className={styles.buttons}>
+                        <div onClick={() => handleBackspaceClick()} className={`${styles.button} ${styles.backspace}`}>POISTA KIRJAIN</div>
+                        <div onClick={() => handleSubmit()} className={`${styles.button} ${styles.submit}`}>LÄHETÄ</div>
+                    </div>
                 </div>
             </div>
             {

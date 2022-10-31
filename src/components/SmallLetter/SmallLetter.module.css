@@ -5,6 +5,8 @@
     width: 50px;
     height: 50px;
     font-size: 18px;
+    cursor: pointer;
+    user-select: none;
     background-color: #EEE;
 }
 
@@ -14,4 +16,12 @@
 
 .inWord {
     background-color: #3498db;
+}
+
+@media screen and (max-width: 700px) {
+    .smallLetter {
+        width: 25px;
+        height: 25px;
+        font-size: 12px;
+    }
 }
