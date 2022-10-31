@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/guess-a-word/static/css/main.b35792ef.css",
-    "main.js": "/guess-a-word/static/js/main.6d37c66c.js",
+    "main.css": "/guess-a-word/static/css/main.5512789d.css",
+    "main.js": "/guess-a-word/static/js/main.20b7d5d1.js",
     "static/js/787.d8841f87.chunk.js": "/guess-a-word/static/js/787.d8841f87.chunk.js",
     "index.html": "/guess-a-word/index.html",
-    "main.b35792ef.css.map": "/guess-a-word/static/css/main.b35792ef.css.map",
-    "main.6d37c66c.js.map": "/guess-a-word/static/js/main.6d37c66c.js.map",
+    "main.5512789d.css.map": "/guess-a-word/static/css/main.5512789d.css.map",
+    "main.20b7d5d1.js.map": "/guess-a-word/static/js/main.20b7d5d1.js.map",
     "787.d8841f87.chunk.js.map": "/guess-a-word/static/js/787.d8841f87.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b35792ef.css",
-    "static/js/main.6d37c66c.js"
+    "static/css/main.5512789d.css",
+    "static/js/main.20b7d5d1.js"
   ]
 }
