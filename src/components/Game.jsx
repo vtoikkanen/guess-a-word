@@ -28,7 +28,7 @@ const Game = () => {
         if (guess.length === 5) {
             setGuesses([...guesses, guess]);
             setGuess("");
-            if (guess === word) {
+            if (guess.toUpperCase() === word.toUpperCase()) {
                 setGameWon(true);
             }
         }
@@ -45,7 +45,7 @@ const Game = () => {
         else if (event.keyCode === 13 && guess.length === 5) {
             setGuesses([...guesses, guess]);
             setGuess("");
-            if (guess === word) {
+            if (guess.toUpperCase() === word.toUpperCase()) {
                 setGameWon(true);
             }
         }

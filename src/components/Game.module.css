@@ -111,4 +111,8 @@
         padding: 10px;
         font-size: 12px;
     }
+
+    .gameWon {
+        width: 320px;
+    }
 }
