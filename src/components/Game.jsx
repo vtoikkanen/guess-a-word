@@ -69,8 +69,8 @@ const Game = () => {
                 <div className={styles.wordGrid}>
                     {
                         guesses.slice(-4).map(guessed_word => {
-                            const correct_word_as_array = word.split("");
-                            const word_as_array = guessed_word.split("");
+                            const correct_word_as_array = word.toUpperCase().split("");
+                            const word_as_array = guessed_word.toUpperCase().split("");
                             return word_as_array.map((letter, index) => {
                                 const correctLetter = correct_word_as_array.includes(letter);
                                 const correctSpot = correct_word_as_array[index] === letter;
